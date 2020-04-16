@@ -8,7 +8,7 @@ http.createServer((req,res)=>{
     switch(req.url){
 case'/':
 res.writeHead(200,{'Content-Type':'text/html'});
-file=fs.readFileSync('./appdata/index.html');
+file=fs.readFileSync('./appdata/MainPage.html');
 res.end(file);
 break;
     }
