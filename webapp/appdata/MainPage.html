@@ -7,7 +7,27 @@
  </head>
  <body>
 
+	<script>
+		const mysql = require("mysql");
 
+const connection = mysql.createConnection({
+host: "localhost",
+user: "root",
+database: "alcohol",
+password: "1111"
+});
+
+const sql = "select*from alcohol.slaboalk";
+connection.query(sql,  function(err, results) {
+if(err) console.log(err);
+const slab = results;
+for(let i=0; i < slab.length; i++){
+console.log(slab[i].slName);
+}
+});
+
+connection.end();
+		</script>
     <style>
 
 html, body{
@@ -100,9 +120,12 @@ a{
     </style>
     
     
+
+
+
     
     <header class="header">
-        <h4 class="title">Самый лучший магаз на свете епта</h4>
+        <h4 class="title">Лкогольная продукция и коктейли</h4>
 	</header>
     <div class="sidebar">
         <ul class="menu">
@@ -131,8 +154,9 @@ a{
 
         <div class="assortment">
             <div class="slboalk">
-                <a>Слабоалкогогольные напитки</a>
-                
+				<a>Слабоалкогогольные напитки</a>
+				
+               
             </div>
         </div>
     
