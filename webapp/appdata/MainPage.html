@@ -7,27 +7,7 @@
  </head>
  <body>
 
-	<script>
-		const mysql = require("mysql");
-
-const connection = mysql.createConnection({
-host: "localhost",
-user: "root",
-database: "alcohol",
-password: "1111"
-});
-
-const sql = "select*from alcohol.slaboalk";
-connection.query(sql,  function(err, results) {
-if(err) console.log(err);
-const slab = results;
-for(let i=0; i < slab.length; i++){
-console.log(slab[i].slName);
-}
-});
-
-connection.end();
-		</script>
+	
     <style>
 
 html, body{
