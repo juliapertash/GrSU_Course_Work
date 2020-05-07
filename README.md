@@ -9,7 +9,11 @@ Alcohol Web Site for Barmens
 Функционал: категории, сортировка
 
 *created login page
+
 *crated main page
+
 *created hello message after login
+
 *working on db connection
+
 *working on unavailability to the main page based on the results of age data from the form
