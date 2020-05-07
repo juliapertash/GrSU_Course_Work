@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function save(){
+		sessionStorage.login = document.getElementById("login").value; 
+		window.alert("secusess");
+		}
+	</script>
+	<meta charset="utf-8">
+<title>Анкета пользователя</title>
+</head>
+
+<body>
+	
+<form action="MainPage.html" method="POST">
+	<h1 align="center">Анкета пользователя</h1>
+	<fieldset>
+		<legend>Заполните анкету</legend>
+		<label>
+			<h3>Имя пользователя</h3>
+			<input class="btn" type="text" id="login" maxlength="15" size="40" placeholder="Введите логин" />
+		</label>
+		<label>
+			<h3>Пороль</h3>
+			<input class="btn" type="date" maxlength="25" size="40" name="Date"  placeholder="Дата рождения" />
+		</label>
+
+		<h3></h3>
+		
+        <input type="submit" value="Отправить" size="40" onclick="save()"/>
+	</fieldset>
+
+</body>
+
+</html>

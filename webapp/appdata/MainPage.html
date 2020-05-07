@@ -1,145 +1,212 @@
 <!DOCTYPE html>
 <html>
- <head>
+<head>
+  <script>
+ 
+    var login= sessionStorage.login;
+    window.alert("Здравствуйте, "+login);
   
-  <meta charset="utf-8">
-  <title >Не смотря на милое личико алкоголичка</title>
- </head>
- <body>
+</script>
+<meta charset="utf-8">
+<title >Не смотря на милое личико алкоголичка</title>
+</head>
+<body>
 
-	
-    <style>
+
+<style>
 
 html, body{
-	margin: 0;
+margin: 0;
 }
 .title{
-	padding: 10px;
+padding: 10px;
 }
-.header{
-    margin: 10px;
-	background: #cb2d41;
-	height: 100px;
+#header{
+margin: 10px;
+background: #cb2d41;
+height: 150px;
+}
+
+h1{
+  color: #181616;  
+  font: 50px Georgia;  
+  margin-left: 400px; 
+}
+.descript{
+  width: 600px;  
+  color: #181616;  
+  font-style: italic;  
+  font-size:25px; 
+  margin-left: 700px; 
+  
+}
+img{
+  position:absolute;
+  top:34px;
+  left:10px;
+}
+.c {
+    border: 1px solid #333; 
+    display: inline-block;
+    padding: 5px 15px; 
+    text-decoration: none; 
+    color: #001; 
+    position:absolute;
+    left:1230px;
+    top: 60px;
+}
+
+.c:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); 
+    background: linear-gradient(to bottom, #fcfff4, #e9e9ce);
+    color: #8B0000;
 }
 ul{
-	margin: 0;
-	padding: 0;
-    list-style: none;
-    
+margin: 0;
+padding: 0;
+list-style: none;
+
 }
 .menu{
-	padding: 10px;
+padding: 10px;
 }
 .menu a{
-	background:#181616;
-	color: #fff;
-	padding: 10px;
-	display: block;
-	border-bottom: 1px solid #666;
-	transition: 0.5s all;
+background:#181616;
+color: #fff;
+padding: 10px;
+display: block;
+border-bottom: 1px solid #666;
+transition: 0.5s all;
 }
 .sidebar{
-	float: left;
-     width: 20%;
-	 height: 280px;
-	 
+float: left;
+width: 20%;
+height: 280px;
+
 }
 .menu a:hover{
-	background: #666;
-	padding: 10px 0 10px 20px;
+background: #666;
+padding: 10px 0 10px 20px;
 }
 .menu li:first-child a, .menu li .v_menu li:first-child a{
-	border-radius: 3px 3px 0 0;
+border-radius: 3px 3px 0 0;
 }
 .menu li:last-child a, .menu li .v_menu li:last-child a{
-	border-radius: 0 0 3px 3px;
-	border-bottom: 0;
+border-radius: 0 0 3px 3px;
+border-bottom: 0;
 }
 .menu li .v_menu li a{
-	border-radius: 0;
+border-radius: 0;
 }
 .p_menu{position: relative;}
 .v_menu{
-	position: absolute;
-	width: 100%;
-	left: 100%;
-	top: -9999px;
-	opacity: 0;
-	border-left: 10px solid transparent;
-	transition: 0.5s opacity;
+position: absolute;
+width: 100%;
+left: 100%;
+top: -9999px;
+opacity: 0;
+border-left: 10px solid transparent;
+transition: 0.5s opacity;
 }
 .p_menu:hover .v_menu{
-	opacity: 1;
-	top: 0;
+opacity: 1;
+top: 0;
 }
 .p_menu::after{
-	content: "";
-	position: absolute;
-	border:5px solid;
-	border-color: transparent transparent transparent #eee;
-	top:1em;
-	right: 0.7em;
-	transition: 0.5s;
+content: "";
+position: absolute;
+border:5px solid;
+border-color: transparent transparent transparent #eee;
+top:1em;
+right: 0.7em;
+transition: 0.5s;
 }
 .p_menu:hover::after{
-	transform: scaleX(-1);
+transform: scaleX(-1);
 }
 a{
-    text-decoration: none;
+text-decoration: none;
 }
 .assortment{
-	float: right;
-	width: 80%;
-	height: 280px;
-	background: #e9e9e9;
-	
+float: right;
+width: 80%;
+height: 280px;
+background: #e9e9e9;
+
 }
 .slboalk{
-	padding: 20px;
+padding: 20px;
 }
-    </style>
-    
-    
+</style>
 
 
 
-    
-    <header class="header">
-        <h4 class="title">Лкогольная продукция и коктейли</h4>
-	</header>
-    <div class="sidebar">
-        <ul class="menu">
-            <li class="p_menu"><a href="#">Слабоалкогогольные напитки </a>
-                <ul class="v_menu">
-                    <li><a href="#">подменю</a></li>
-                    <li><a href="#">подменю</a></li>
-                </ul>
-            </li>
-            <li class="p_menu"><a href="#">Среднеалкогольные напитки</a>
-                <ul class="v_menu">
-                    <li><a href="#">подменю</a></li>
-                    <li><a href="#">подменю</a></li>
-                    
-                </ul>
-            </li>
-            <li><a href="#">Боярышник</a></li>
-            <li class="p_menu"><a href="#">Карта сайта</a>
-                <ul class="v_menu">
-                    <li><a href="#">Антисептик</a></li>
-                    
-                     </ul>
-            </li>
-         </ul>
-        </div>
 
-        <div class="assortment">
-            <div class="slboalk">
-				<a>Слабоалкогогольные напитки</a>
-				
-               
-            </div>
-        </div>
-    
+<div id="header">
+<h1 class="title">Памятка для барменов</h1>
+<h2 class="descript" align="right">Алкогольные напитки и коктейли</h2>
+<img src='Logo.png' width="150" height="150">
+
+
+
+</div>
+<div class="sidebar">
+<ul class="menu">
+<li class="p_menu"><a href="#">Слабоалкогогольные напитки </a>
+<ul class="v_menu">
+<li><a href="#">Пиво</a></li>
+<li><a href="#">Сидр</a></li>
+<li><a href="#">Збитень</a></li>
+</ul>
+</li>
+
+<li class="p_menu"><a href="#">Среднеалкогольные напитки</a>
+<ul class="v_menu">
+<li><a href="#">Белое вино</a></li>
+<li><a href="#">Красное вино</a></li>
+<li><a href="#">Шампанское</a></li>
+<li><a href="#">Медовуха</a></li>
+</ul>
+</li>
+
+<li class="p_menu"><a href="#">Крепкие напитки</a>
+<ul class="v_menu">
+<li><a href="#">Водка</a></li>
+<li><a href="#">Коньяк</a></li>
+<li><a href="#">Виски</a></li>
+<li><a href="#">Бренди</a></li>
+<li><a href="#">Ром</a></li>
+<li><a href="#">Джин</a></li>
+</ul>
+</li>
+
+<li class="p_menu"><a href="#">Коктейли</a>
+<ul class="v_menu">
+<li><a href="#">Голубая Лагуна</a></li>
+<li><a href="#">Маргорита</a></li>
+<li><a href="#">ПиноКолада</a></li>
+<li><a href="#">Мохито</a></li>
+<li><a href="#">Дайкири</a></li>
+</ul>
+</li>
+
+<li class="p_menu"><a href="#">Карта сайта</a>
+<ul class="v_menu">
+<li><a href="#">Антисептик</a></li>
+
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="assortment">
+<div class="slboalk">
+<a>Текст о напитках</a>
+
+
+</div>
+</div>
+
 
 </body>
 </html>
