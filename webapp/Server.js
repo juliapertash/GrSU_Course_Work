@@ -25,9 +25,11 @@ app.post("/", urlencodedParser, function(req, res){
   const user =req.body;
   conn.connect().then(function () {
     var request = new sql.Request(conn);    
-    console.log(user.login +" "+user.date);
+    
+    var login=user.login
+    console.log(`INSERT INTO Logs (userName) VALUES ('${login}');`);
     //'INSERT INTO Logs (userName, Time) VALUES ($1, $2);', [user.login, user.date]
-  request.query('select * from Logs').then (function (result) {
+  request.query(`INSERT INTO Logs (userName) VALUES ('${login}');`).then (function (result) {
     console.log(result);
     conn.close();
 
