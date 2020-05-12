@@ -70,15 +70,19 @@ app.post("/registr", urlencodedParser, function(req, res){
     
   request.query(`INSERT INTO Logs (userName, email, password) VALUES ('${login}','${email}','${pass}');`).then (function (result) {
     console.log(result);
+    if(result.rowsAffected=1){
+      res.redirect("/MainPage.hbs");
+    }
     conn.close();
 
-  res.redirect("/MainPage.hbs");
+  
 
 
 }).catch(function (err) {
           
   console.log('запрос умер');
   conn.close();
+  
 });
 }).catch(function (err) {
           
