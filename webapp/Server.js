@@ -2,12 +2,13 @@ const express = require("express");
 const bodyParser = require("body-parser");
  
 const app = express();
-const urlencodedParser = bodyParser.urlencoded({extended: false});
 const sql = require("mssql/msnodesqlv8");
+
+const urlencodedParser = bodyParser.urlencoded({extended: false});
 
 const conn = new sql.ConnectionPool({
   server: 'DESKTOP-H3854OI\\SQLEXPRESS',
-  database: 'BD.ALCOSHOP',
+  database: 'AlcoWebSite',
   driver: "msnodesqlv8",
   options: {
     trustedConnection: true
@@ -21,31 +22,37 @@ app.get("/", function(req, res){
 });
 
 app.post("/", urlencodedParser, function(req, res){
-  if(!req.body) return res.sendStatus(400);
+  const user =req.body;
+  conn.connect().then(function () {
+    var request = new sql.Request(conn);    
+    console.log(user.login +" "+user.date);
+    //'INSERT INTO Logs (userName, Time) VALUES ($1, $2);', [user.login, user.date]
+  request.query('select * from Logs').then (function (result) {
+    console.log(result);
+    conn.close();
+
   res.redirect("/MainPage.hbs");
+
+
+}).catch(function (err) {
+          
+  console.log('запрос умер');
+  conn.close();
+});
+}).catch(function (err) {
+          
+  console.log(err);
+  conn.close();
+});
+
 });
 
 app.get("/MainPage.hbs", function (req, res) {
-  conn.connect().then(function () {
-    var request = new sql.Request(conn);
-    request.query("select * from ASSORTMENT").then(function (recordSet) {
-          res.render("MainPage.hbs", {
-          items: recordSet
-          
-      }).catch(function (err) {
-          
-        console.log(err);
-        
-    });
-      
-      conn.close();
-    }).catch(function (err) {
-      
-      console.log(err);
-  });
+  res.render("MainPage.hbs");
 });
-});
+
 
 app.listen(3000, function(){
   console.log("Сервер ожидает подключения...");
 });
+
