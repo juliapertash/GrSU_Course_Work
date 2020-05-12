@@ -100,7 +100,7 @@ app.use("/show", function (req, res) {
       request.query(`SELECT * FROM Drinks WHERE idCategory=1;`).then (function (result) {
         result.recordset.forEach(function(entry) {
          // console.log(entry.Name+" "+entry.Content);
-          outputtext+=entry.Name+" - "+entry.Content+" градусов. "+"\n    ";
+          outputtext+="\n\t"+entry.Name+" - "+entry.Content+" градусов. "+"\n\t";
       });
       console.log(outputtext);
 
