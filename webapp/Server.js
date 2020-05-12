@@ -18,7 +18,7 @@ const conn = new sql.ConnectionPool({
 app.set("view engine", "hbs");
 
 app.get("/", function(req, res){
-  res.render("Form.hbs");
+  res.render("LogIn.hbs");
 });
 
 app.post("/", urlencodedParser, function(req, res){
@@ -27,9 +27,48 @@ app.post("/", urlencodedParser, function(req, res){
     var request = new sql.Request(conn);    
     
     var login=user.login
-    console.log(`INSERT INTO Logs (userName) VALUES ('${login}');`);
-    //'INSERT INTO Logs (userName, Time) VALUES ($1, $2);', [user.login, user.date]
-  request.query(`INSERT INTO Logs (userName) VALUES ('${login}');`).then (function (result) {
+    
+    var pass=user.pass
+    console.log(`SELECT * FROM Logs WHERE userName='${login}' AND password='${pass}';`);
+    
+  request.query(`SELECT * FROM Logs WHERE userName='${login}' AND password='${pass}';`).then (function (result) {
+    console.log(result.recordset);
+    if(result.recordset.length=1){
+      res.redirect("/MainPage.hbs");
+    }
+    conn.close();
+
+ // res.redirect("/MainPage.hbs");
+
+
+}).catch(function (err) {
+          
+  console.log('запрос умер');
+  conn.close();
+});
+}).catch(function (err) {
+          
+  console.log(err);
+  conn.close();
+});
+
+});
+
+app.get("/registr", function(req, res){
+  res.render("RegistrationPage.hbs");
+});
+
+app.post("/registr", urlencodedParser, function(req, res){
+  const user =req.body;
+  conn.connect().then(function () {
+    var request = new sql.Request(conn);    
+    
+    var login=user.login
+    var email = user.email
+    var pass=user.pass
+    console.log(`INSERT INTO Logs (userName, email, password) VALUES ('${login}','${email}','${pass}');`);
+    
+  request.query(`INSERT INTO Logs (userName, email, password) VALUES ('${login}','${email}','${pass}');`).then (function (result) {
     console.log(result);
     conn.close();
 
