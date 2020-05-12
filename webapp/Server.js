@@ -92,11 +92,39 @@ app.post("/registr", urlencodedParser, function(req, res){
 
 });
 
-app.get("/MainPage.hbs", function (req, res) {
-  res.render("MainPage.hbs");
+app.use("/show", function (req, res) {
+  conn.connect().then(function () {
+    var outputtext="";
+    var request = new sql.Request(conn);  
+        console.log(`SELECT * FROM Drinks WHERE idCategory=1;`);
+      request.query(`SELECT * FROM Drinks WHERE idCategory=1;`).then (function (result) {
+        result.recordset.forEach(function(entry) {
+         // console.log(entry.Name+" "+entry.Content);
+          outputtext+=entry.Name+" - "+entry.Content+" градусов. "+"\n    ";
+      });
+      console.log(outputtext);
+
+      res.render("showcat.hbs", {
+        title: 'Слабоалкогольные напитки',
+        content: outputtext
+    });
+
+   }).catch(function (err) {
+          
+  console.log('запрос умер');
+  conn.close();
+});
+}).catch(function (err) {
+          
+  console.log(err);
+  conn.close();
+});
+  
 });
 
-
+app.get("/MainPage.hbs", function(req, res){
+  res.render("MainPage.hbs");
+});
 app.listen(3000, function(){
   console.log("Сервер ожидает подключения...");
 });
