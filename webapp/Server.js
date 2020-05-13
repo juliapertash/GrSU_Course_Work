@@ -92,7 +92,7 @@ app.post("/registr", urlencodedParser, function(req, res){
 
 });
 
-app.use("/show", function (req, res) {
+app.use("/show1", function (req, res) {
   conn.connect().then(function () {
     var outputtext="";
     var request = new sql.Request(conn);  
@@ -121,6 +121,117 @@ app.use("/show", function (req, res) {
 });
   
 });
+
+app.use("/show2", function (req, res) {
+  conn.connect().then(function () {
+    var outputtext="";
+    var request = new sql.Request(conn);  
+        console.log(`SELECT * FROM Drinks WHERE idCategory=2;`);
+      request.query(`SELECT * FROM Drinks WHERE idCategory=2;`).then (function (result) {
+        result.recordset.forEach(function(entry) {
+         // console.log(entry.Name+" "+entry.Content);
+          outputtext+="\n\t"+entry.Name+" - "+entry.Content+" градусов. "+"\n\t";
+      });
+      console.log(outputtext);
+
+      res.render("showcat.hbs", {
+        title: 'Среднеалкогольные напитки',
+        content: outputtext
+    });
+
+   }).catch(function (err) {
+          
+  console.log('запрос умер');
+  conn.close();
+});
+}).catch(function (err) {
+          
+  console.log(err);
+  conn.close();
+});
+  
+});
+
+app.use("/show3", function (req, res) {
+  conn.connect().then(function () {
+    var outputtext="";
+    var request = new sql.Request(conn);  
+        console.log(`SELECT * FROM Drinks WHERE idCategory=3;`);
+      request.query(`SELECT * FROM Drinks WHERE idCategory=3;`).then (function (result) {
+        result.recordset.forEach(function(entry) {
+         // console.log(entry.Name+" "+entry.Content);
+          outputtext+="\n\t"+entry.Name+" - "+entry.Content+" градусов. "+"\n\t";
+      });
+      console.log(outputtext);
+
+      res.render("showcat.hbs", {
+        title: 'Крепкие напитки',
+        content: outputtext
+    });
+
+   }).catch(function (err) {
+          
+  console.log('запрос умер');
+  conn.close();
+});
+}).catch(function (err) {
+          
+  console.log(err);
+  conn.close();
+});
+  
+});
+
+
+app.use("/show4", function (req, res) {
+  conn.connect().then(function () {
+    var outputtext="";
+    var request = new sql.Request(conn);  
+        
+      request.query(`select Coctails.Name AS coctail, Drinks.Name AS engr, DrinkToCoctail.Quantity AS Quantity
+      from DrinkToCoctail join Drinks 
+      on DrinkToCoctail.idDrink=Drinks.id
+      join Coctails
+      on DrinkToCoctail.idCoctail=Coctails.id
+      
+      UNION
+      
+      select Coctails.Name, AddIngredients.Name, AddToCoctails.Quantity AS Quantity
+      from AddToCoctails join AddIngredients
+      on AddToCoctails.idIngred=AddIngredients.id
+      join Coctails
+      on AddToCoctails.idCoctail=Coctails.id
+      
+      ORDER BY Coctails.Name
+      
+      
+      `).then (function (result) {
+        result.recordset.forEach(function(entry) {
+          // console.log(entry.Name+" "+entry.Content);
+           outputtext+="\n\t"+entry.coctail+" - "+entry.engr+" - "+entry.Quantity+". "+"\n\t";
+       });
+        console.log(outputtext);
+      
+      
+
+      res.render("showcat.hbs", {
+        title: 'Коктейли',
+        content: outputtext
+    });
+
+   }).catch(function (err) {
+          
+  console.log('запрос умер');
+  conn.close();
+});
+}).catch(function (err) {
+          
+  console.log(err);
+  conn.close();
+});
+  
+});
+
 
 app.get("/MainPage.hbs", function(req, res){
   res.render("MainPage.hbs");
