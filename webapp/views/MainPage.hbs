@@ -12,20 +12,22 @@
 
 html, body{
 margin: 0;
-}
-.title{
-padding: 10px;
-}
-#header{
-margin: 10px;
-background: #cb2d41;
-height: 150px;
+background: url(https://mblx.ru/wp-content/uploads/2017/06/TSvet-yasen-svetlyj.jpg) repeat;
 }
 
-h1{
-  color: #181616;  
-  font: 50px Georgia;  
-  margin-left: 400px; 
+
+#header{
+
+background: #ff00cc url(https://img4.goodfon.ru/wallpaper/nbig/b/6a/3d-rendering-background-design-abstract-geometry-geometric-s.jpg) repeat;
+height: 150px;
+
+}
+
+.title{
+padding: 10px;
+color: #181616;  
+font: 50px Georgia;  
+margin-left: 400px; 
 }
 .descript{
   width: 600px;  
@@ -38,8 +40,44 @@ h1{
 img{
   position:absolute;
   top:34px;
-  left:10px;
+  left:0px;
 }
+
+a.button1 {
+  position: absolute;
+  display: inline-block;
+  top: 35px;
+  right: 0;
+  color: #181616;
+  font-weight: bold;
+  font-size:17px;
+  text-decoration: none;
+  text-shadow: rgba(255,255,255,.5) 1px 1px, rgba(100,100,100,.3) 3px 7px 3px;
+  user-select: none;
+  padding: 1em 2em;
+  outline: none;
+  border-radius: 3px / 100%;
+  background-image:
+   linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%),
+   linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 90%, rgba(255,255,255,.3)),
+   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5)),
+   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5));
+  background-repeat: no-repeat;
+  background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;
+  background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+  box-shadow: rgba(0,0,0,.5) 3px 10px 10px -10px;
+}
+a.button1:hover {
+  transition: .5s linear;
+  background-position: -200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+}
+a.button1:active {
+  top: 1px;
+}
+
+
 .c {
     border: 1px solid #333; 
     display: inline-block;
@@ -114,26 +152,76 @@ transform: scaleX(-1);
 a{
 text-decoration: none;
 }
-.assortment{
-float: right;
-width: 80%;
-height: 280px;
-background: #e9e9e9;
+#main{
+float: center;
+width: 100%;
+height: 500px;
+}
+.content{
+background:oldlace;
+width:60%;
+height:500px;
+position:absolute;
+left:20%;
+top:190px;
 
 }
-.slboalk{
-padding: 20px;
+.codex{
+background:darkred;
+width:18%;
+height:500px;
+position:absolute;
+left: 81%;
+top:190px;
+}
+.text{
+width:18%;
+height:240px;
+position:absolute;
+left: 81%;
+top:450px;
+color: #181616;  
+font-style: italic;  
+font-weight:bold;
+font-size:20px; 
+}
+
+#footer {
+  width: 100%;
+  height: 40px;
+  background: #66cc00 url(https://img4.goodfon.ru/wallpaper/nbig/b/6a/3d-rendering-background-design-abstract-geometry-geometric-s.jpg) repeat;
+  margin:auto;
+  clear:both;
+}
+.left{
+  width:200px;
+  float:left;
+  outline:1px solid #9F00BF;
+}
+.right{
+  width:200px;
+  float:right;
+  outline:1px solid #9F00BF;
+}
+.center{
+  margin:0 210px;
+  outline:1px solid #9F00BF;
+}
+.limiter{
+  clear:both;
+}
+
+
 }
 </style>
-
 
 
 
 <div id="header">
 <h1 class="title">Памятка для барменов</h1>
 <h2 class="descript" align="right">Алкогольные напитки и коктейли</h2>
-<img src='Logo.png' width="150" height="150">
-
+<img src=https://cdn.pixabay.com/photo/2018/03/19/15/10/drinks-3240223_960_720.png width="150" height="150">
+<a href="https://kodeksy-by.com/koap_rb/17.3.htm" class="button1">Это полезно знать</a>
 
 
 </div>
@@ -157,13 +245,22 @@ padding: 20px;
 </ul>
 </div>
 
-<div class="assortment">
-<div class="slboalk">
-<a>Текст о напитках</a>
-
+<div id="main">
+      <div class="content"></div>
+      <div class="codex">
+        <p><img src="https://st2.depositphotos.com/1030509/10904/v/950/depositphotos_109043508-stock-illustration-handsome-barman-in-work-vector.jpg" border="5" height="210" width="210" hspace="10"></p></div>
+      <div class="text" align="center">
+      <h3>Главное правило</h3>
+      <p >Откровения клиентов умирают за стойкой</p>
+    </div>
 </div>
-</div>
 
+<div id="footer">
+   <p id="footer-text">
+                Copyright © 2020 Агинская Надежда Петраш Юлия<br />
+                Курсовая работа
+            </p>
+  </div>
 
 </body>
 </html>

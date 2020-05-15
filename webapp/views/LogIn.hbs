@@ -4,27 +4,219 @@
 		<meta charset="utf-8">
 <title>Вход</title>
 </head>
+<style>
+	html, body{
+        margin: 0;
+        background: url(https://mblx.ru/wp-content/uploads/2017/06/TSvet-yasen-svetlyj.jpg) repeat;
+        color: white; 
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+}
 
+#main{
+float: center;
+width: 100%;
+height: 510px;
+top:0;
+}
+#main h1 {
+    background-color: #292829;
+    border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+#main fieldset {
+    border: none;
+    padding: 20px;
+    position: relative;
+
+}
+#main fieldset form {
+    overflow: hidden;
+    width: 270px;
+}
+#main fieldset form a{
+
+	text-decoration: none;
+    color: #fff;
+    padding: 2px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+}
+
+#main fieldset form a:hover {
+    text-decoration: underline;
+    background: #292829;
+    color: white;
+}
+
+#main fieldset form input {
+    font-size: 14px;
+    outline: none;
+    -webkit-appearance:none;
+    width: 260px;
+    position: center;
+  
+
+}
+#main fieldset form input[type="text"] {
+    border: 1px solid #292829;
+    border-radius: 3px 3px 0px 0px;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    padding: 12px 10px;
+    width: 238px;
+  -webkit-appearance:none;
+}
+
+#main fieldset form input[type="password"] {
+    border: 1px solid #292829;
+    border-top: none;
+    border-radius: 0px 0px 3px 3px;
+    -moz-border-radius: 0px 0px 3px 3px;
+    -webkit-border-radius: 0px 0px 3px 3px;
+    padding: 12px 10px;
+    width: 238px;
+  -webkit-appearance:none;
+}
+
+#main fieldset form input[type="submit"] {
+    background: none;
+    border: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+    float: none;
+    margin-top: 20px;
+  -webkit-appearance: none;
+  top: 35px;
+  right: 0;
+  color: #292829;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: rgba(255,255,255,.5) 1px 1px, rgba(100,100,100,.3) 3px 7px 3px;
+  user-select: none;
+  padding: 1em 2em;
+  outline: none;
+  border-radius: 3px / 100%;
+  background-image:
+   linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%),
+   linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 90%, rgba(255,255,255,.3)),
+   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5)),
+   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5));
+  background-repeat: no-repeat;
+  background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;
+  background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+  box-shadow: rgba(0,0,0,.5) 3px 10px 10px -10px;
+}
+
+#main fieldset form input[type="submit"]:hover {
+  transition: .5s linear;
+  background-position: -200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+}
+#main fieldset form input[type="submit"]:active {
+  top: 1px;
+}.pic1{
+width:30%;
+height: 520px;
+position:absolute;
+left:0;
+top:50px;
+
+}
+.form{
+background-color: darkred;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;     
+    margin: 70px auto;
+    width: 300px;
+  font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  -webkit-box-shadow:  0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+   box-shadow:  0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+}
+.pic2{
+	width:30%;
+	height: 520px;
+    position:absolute;
+    left:70%;
+    top:50px;
+}
+#footer {
+  width: 100%;
+  height: 40px;
+  background: #66cc00 url(https://img4.goodfon.ru/wallpaper/nbig/b/6a/3d-rendering-background-design-abstract-geometry-geometric-s.jpg) repeat;
+  margin:auto;
+  clear:both;
+  color: #292829;
+  font-size: 15px;
+}
+.left{
+  width:200px;
+  float:left;
+  outline:1px solid #9F00BF;
+}
+.right{
+  width:200px;
+  float:right;
+  outline:1px solid #9F00BF;
+}
+.center{
+  margin:0 210px;
+  outline:1px solid #9F00BF;
+}
+.limiter{
+  clear:both;
+}
+
+
+}
+</style>
 <body>
-	
-<form action="/" method="POST">
-	<h1 align="center">Вход</h1>
+<div id="main">
+
+    <div class="pic1"><p><img src="https://image.flaticon.com/icons/png/512/31/31930.png" height="500" width="400" ></p></div>
+    
+    <div class="form">
+    <h1 align="center">Авторизация</h1>
 	<fieldset>
+		<form action="/" method="POST">
 		<label>
 			<h3>Имя пользователя</h3>
-			<input class="btn" type="text" name="login" maxlength="15" size="40" placeholder="Придумайте логин" />
+			<input class="btn" type="text" name="login" maxlength="15" size="40" placeholder="Введите логин" />
 		</label>
 		
 		<label>
 			<h3>Пароль</h3>
-			<input class="btn" type="password" name="pass" maxlength="10" size="40" placeholder="Придумайте логин" />
+			<input class="btn" type="password" name="pass" maxlength="10" size="40" placeholder="Введите пароль" />
 		</label>
 
-		<h3></h3>
-		
-        <input type="submit" value="Отправить" size="40" />
+		<h3> <input type="submit" value="Войти" size="40" /></h3>
+		<p style="text-align:center"><a href="/registr">Регистрация</a></p>
+	</form>
 	</fieldset>
-<p><a href="/registr">Регистрация</a></p>
+   
+    </div>
+    <div class="pic2"><p><img src="https://image.flaticon.com/icons/png/512/2059/2059731.png" height="510" width="400" ></div>
+</div>
+<div id="footer">
+   <p id="footer-text">
+                Copyright © 2020 Агинская Надежда Петраш Юлия<br />
+                Курсовая работа
+            </p>
+  </div>	
 </body>
 
 </html>
